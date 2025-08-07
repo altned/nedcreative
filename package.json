@@ -1,0 +1,9 @@
+{
+  "name": "nedcreative",
+  "version": "1.0.0",
+  "description": "Landing page for nedcreative",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  }
+}
