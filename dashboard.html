@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <ul>
+          <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container">
+      <h2>Artikel</h2>
+      <button id="showForm">Buat Artikel</button>
+      <div id="articleFormContainer" style="display:none;">
+        <form id="articleForm">
+          <input type="text" id="title" placeholder="Judul" required />
+          <textarea id="content" placeholder="Isi" required></textarea>
+          <button type="submit">Simpan</button>
+          <button type="button" id="cancelEdit">Batal</button>
+        </form>
+      </div>
+      <ul id="articleList"></ul>
+    </main>
+
+    <script src="articles.js"></script>
+    <script>
+      if (localStorage.getItem('loggedIn') !== 'true') {
+        window.location.href = 'login.html';
+      }
+
+      const formContainer = document.getElementById('articleFormContainer');
+      const form = document.getElementById('articleForm');
+      const articleList = document.getElementById('articleList');
+      const showFormBtn = document.getElementById('showForm');
+      const cancelBtn = document.getElementById('cancelEdit');
+      let editIndex = null;
+
+      function resetForm() {
+        form.reset();
+        editIndex = null;
+      }
+
+      function renderArticles() {
+        articleList.innerHTML = '';
+        const articles = getArticles();
+        if (articles.length === 0) {
+          const li = document.createElement('li');
+          li.textContent = 'Belum ada artikel.';
+          articleList.appendChild(li);
+          return;
+        }
+        articles.forEach((a, i) => {
+          const li = document.createElement('li');
+          li.innerHTML = '<strong>' + a.title + '</strong><p>' + excerpt(a.content) + '</p>' +
+            '<button data-edit="' + i + '">Edit</button>' +
+            '<button data-delete="' + i + '">Delete</button>';
+          articleList.appendChild(li);
+        });
+      }
+
+      showFormBtn.addEventListener('click', () => {
+        formContainer.style.display = 'block';
+      });
+
+      cancelBtn.addEventListener('click', () => {
+        formContainer.style.display = 'none';
+        resetForm();
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const articles = getArticles();
+        const newArticle = { title: form.title.value, content: form.content.value };
+        if (editIndex !== null) {
+          articles[editIndex] = newArticle;
+        } else {
+          articles.push(newArticle);
+        }
+        saveArticles(articles);
+        renderArticles();
+        formContainer.style.display = 'none';
+        resetForm();
+      });
+
+      articleList.addEventListener('click', (e) => {
+        const edit = e.target.getAttribute('data-edit');
+        const del = e.target.getAttribute('data-delete');
+        const articles = getArticles();
+        if (edit !== null) {
+          editIndex = Number(edit);
+          form.title.value = articles[editIndex].title;
+          form.content.value = articles[editIndex].content;
+          formContainer.style.display = 'block';
+        } else if (del !== null) {
+          if (confirm('Hapus artikel?')) {
+            articles.splice(Number(del), 1);
+            saveArticles(articles);
+            renderArticles();
+          }
+        }
+      });
+
+      document.getElementById('logout').addEventListener('click', () => {
+        localStorage.removeItem('loggedIn');
+        window.location.href = 'login.html';
+      });
+
+      renderArticles();
+    </script>
+  </body>
+</html>
