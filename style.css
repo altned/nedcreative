@@ -24,6 +24,17 @@ body {
   font-size: 3rem;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 50px;
+}
+
 .navbar ul {
   display: flex;
   justify-content: center;
@@ -85,6 +96,9 @@ h2 {
 }
 
 .tech-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background: #232323;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -94,6 +108,11 @@ h2 {
 .tech-list li:hover {
   background: #2a5298;
   transform: translateY(-3px);
+}
+
+.tech-list img {
+  width: 24px;
+  height: 24px;
 }
 
 .projects {
