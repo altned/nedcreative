@@ -134,6 +134,19 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
+#contact a {
+  color: #ffca28;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  color: #ffe082;
+}
+
+#contact h2 {
+  color: #ffca28;
+}
+
 footer {
   text-align: center;
   background: #1e1e1e;
