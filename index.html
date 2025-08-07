@@ -1,98 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nedcreative | Mobile & Web Solutions</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="hero fade-in">
-    <div class="logo-container">
-      <img src="assets/logo.svg" alt="nedcreative logo" class="logo" />
-      <h1>nedcreative</h1>
-    </div>
-    <p>Solusi profesional untuk pengembangan aplikasi mobile, web, dan profil perusahaan</p>
-  </header>
-
-  <nav class="navbar">
-    <ul>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#services">Layanan</a></li>
-      <li><a href="#tech">Teknologi</a></li>
-      <li><a href="#portfolio">Proyek</a></li>
-      <li><a href="#contact">Kontak</a></li>
-    </ul>
-  </nav>
-
-  <main class="grid-container">
-    <section id="about" class="fade-in">
-      <h2>Tentang Kami</h2>
-      <p>nedcreative bergerak di bidang jasa pembuatan aplikasi mobile dan web, serta website company profile. Kami menghadirkan teknologi modern dengan desain profesional untuk mendukung pertumbuhan bisnis Anda.</p>
-    </section>
-
-    <section id="services" class="fade-in">
-      <h2>Layanan</h2>
-      <ul class="services">
-        <li class="slide-up">Pengembangan aplikasi mobile</li>
-        <li class="slide-up">Pengembangan aplikasi web</li>
-        <li class="slide-up">Pembuatan website company profile</li>
-      </ul>
-    </section>
-
-    <section id="tech" class="fade-in">
-      <h2>Teknologi</h2>
-      <ul class="tech-list">
-        <li class="slide-up"><img src="assets/icons/go.svg" alt="Golang" />Golang</li>
-        <li class="slide-up"><img src="assets/icons/react.svg" alt="React" />React</li>
-        <li class="slide-up"><img src="assets/icons/nodejs.svg" alt="Node.js" />Node.js</li>
-        <li class="slide-up"><img src="assets/icons/nextjs.svg" alt="Next.js" />Next.js</li>
-        <li class="slide-up"><img src="assets/icons/flutter.svg" alt="Flutter" />Flutter</li>
-      </ul>
-    </section>
-
-    <section id="portfolio" class="fade-in">
-      <h2>Proyek</h2>
-      <div class="projects">
-        <article class="project slide-up">
-          <h3>Sistem Absensi Online</h3>
-          <p>Aplikasi absensi untuk perusahaan outsource cleaning service dan security gedung.</p>
-        </article>
-        <article class="project slide-up">
-          <h3>Checkpoint Security Gedung</h3>
-          <p>Aplikasi checkpoint untuk memonitor dan mengelola keamanan gedung secara real-time.</p>
-        </article>
-        <article class="project slide-up">
-          <h3>Portal Layanan Visa & Paspor</h3>
-          <p>Platform web untuk order jasa pembuatan dan perpanjangan visa, paspor, serta layanan imigrasi lainnya.</p>
-        </article>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nedcreative | Mobile & Web Solutions</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero fade-in">
+      <div class="container">
+        <div class="logo-container">
+          <img src="assets/logo.svg" alt="nedcreative logo" class="logo" />
+          <h1>nedcreative</h1>
+        </div>
+        <p>
+          Solusi profesional untuk pengembangan aplikasi mobile, web, dan profil
+          perusahaan
+        </p>
       </div>
-    </section>
+    </header>
 
-    <section id="contact" class="fade-in">
-      <h2>Kontak</h2>
-      <p>Email: <a href="mailto:ned.creative.tech@gmail.com">ned.creative.tech@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/6285779732633">0857-7973-2633</a></p>
-    </section>
-  </main>
+    <nav class="navbar">
+      <div class="container">
+        <ul>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#services">Layanan</a></li>
+          <li><a href="#tech">Teknologi</a></li>
+          <li><a href="#portfolio">Proyek</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <footer>
-    <p>&copy; <span id="year"></span> nedcreative. All rights reserved.</p>
-  </footer>
+    <main class="grid-container container">
+      <section id="about" class="fade-in">
+        <h2>Tentang Kami</h2>
+        <p>
+          nedcreative bergerak di bidang jasa pembuatan aplikasi mobile dan web,
+          serta website company profile. Kami menghadirkan teknologi modern
+          dengan desain profesional untuk mendukung pertumbuhan bisnis Anda.
+        </p>
+      </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+      <section id="services" class="fade-in">
+        <h2>Layanan</h2>
+        <ul class="services">
+          <li class="slide-up">Pengembangan aplikasi mobile</li>
+          <li class="slide-up">Pengembangan aplikasi web</li>
+          <li class="slide-up">Pembuatan website company profile</li>
+        </ul>
+      </section>
 
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+      <section id="tech" class="fade-in">
+        <h2>Teknologi</h2>
+        <ul class="tech-list">
+          <li class="slide-up">
+            <img src="assets/icons/go.svg" alt="Golang" />Golang
+          </li>
+          <li class="slide-up">
+            <img src="assets/icons/react.svg" alt="React" />React
+          </li>
+          <li class="slide-up">
+            <img src="assets/icons/nodejs.svg" alt="Node.js" />Node.js
+          </li>
+          <li class="slide-up">
+            <img src="assets/icons/nextjs.svg" alt="Next.js" />Next.js
+          </li>
+          <li class="slide-up">
+            <img src="assets/icons/flutter.svg" alt="Flutter" />Flutter
+          </li>
+        </ul>
+      </section>
 
-    document.querySelectorAll('.fade-in, .slide-up').forEach((el) => observer.observe(el));
-  </script>
-</body>
+      <section id="portfolio" class="fade-in">
+        <h2>Proyek</h2>
+        <div class="projects">
+          <article class="project slide-up">
+            <h3>Sistem Absensi Online</h3>
+            <p>
+              Aplikasi absensi untuk perusahaan outsource cleaning service dan
+              security gedung.
+            </p>
+          </article>
+          <article class="project slide-up">
+            <h3>Checkpoint Security Gedung</h3>
+            <p>
+              Aplikasi checkpoint untuk memonitor dan mengelola keamanan gedung
+              secara real-time.
+            </p>
+          </article>
+          <article class="project slide-up">
+            <h3>Portal Layanan Visa & Paspor</h3>
+            <p>
+              Platform web untuk order jasa pembuatan dan perpanjangan visa,
+              paspor, serta layanan imigrasi lainnya.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="fade-in">
+        <h2>Kontak</h2>
+        <p>
+          Email:
+          <a href="mailto:ned.creative.tech@gmail.com"
+            >ned.creative.tech@gmail.com</a
+          >
+        </p>
+        <p>
+          WhatsApp: <a href="https://wa.me/6285779732633">0857-7973-2633</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> nedcreative. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document
+        .querySelectorAll(".fade-in, .slide-up")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
 </html>
