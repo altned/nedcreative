@@ -157,6 +157,24 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
+#publicArticles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+#publicArticles article {
+  background: var(--card-color);
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
 #contact a {
   color: var(--link-color);
   text-decoration: none;
