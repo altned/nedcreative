@@ -53,6 +53,10 @@ body {
   height: 50px;
 }
 
+.navbar {
+  margin-bottom: 2rem;
+}
+
 .navbar ul {
   display: flex;
   justify-content: center;
@@ -170,6 +174,17 @@ h2 {
 
 #contact h2 {
   color: var(--link-color);
+}
+
+#contact .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#contact .contact-item img {
+  width: 24px;
+  height: 24px;
 }
 
 footer {
