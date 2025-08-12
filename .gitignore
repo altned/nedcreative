@@ -1,0 +1,15 @@
+# Ignore macOS desktop services store files
+.DS_Store
+
+# Node dependencies
+node_modules/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+/dist/
+build/
+

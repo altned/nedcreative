@@ -87,23 +87,27 @@ $(function () {
 
     ***************************/
     var scene = document.getElementById('scene');
-    var parallaxInstance = new Parallax(scene, {
-        limitY: 15,
-    });
+    if (scene) {
+        var parallaxInstance = new Parallax(scene, {
+            limitY: 15,
+        });
+    }
     /***************************
 
     anchor scroll
 
     ***************************/
     $(document).on('click', 'a[href^="#"]', function (event) {
-        event.preventDefault();
-
         var target = $($.attr(this, 'href'));
-        var offset = 90;
+        if (target.length) {
+            event.preventDefault();
 
-        $('html, body').animate({
-            scrollTop: target.offset().top - offset
-        }, 400);
+            var offset = 90;
+
+            $('html, body').animate({
+                scrollTop: target.offset().top - offset
+            }, 400);
+        }
     });
     /***************************
 
